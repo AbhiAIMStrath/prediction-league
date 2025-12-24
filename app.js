@@ -26,7 +26,7 @@ import {
 
 // ✅ Your Firebase config (from your screenshot)
 const firebaseConfig = {
-  apiKey: "AIzaSyByPR-umawWwMd_3eFzGnAOrNeXHAR3sgU",
+  apiKey: "AIzaSyByPR-umawWwMd_3eFzGnAOreNxHAR3sgU",
   authDomain: "prediction-league-9962bd.firebaseapp.com",
   projectId: "prediction-league-9962bd",
   storageBucket: "prediction-league-9962bd.firebasestorage.app",
