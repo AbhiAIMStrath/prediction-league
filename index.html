@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prediction League</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🏏 Prediction League</div>
+    <div class="right">
+      <span id="userBadge" class="badge">…</span>
+      <button id="btnReset" class="ghost" title="Clear local data for this device">Reset</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="screenLoading" class="card">
+      <h2>Loading…</h2>
+      <p>Setting up your device.</p>
+    </section>
+
+    <section id="screenJoin" class="card hidden">
+      <h2>Join a League</h2>
+      <p>Enter invite code + nickname.</p>
+
+      <div class="grid2">
+        <div>
+          <label>Invite code</label>
+          <input id="inviteCode" placeholder="e.g. AB12CD" maxlength="12" />
+        </div>
+        <div>
+          <label>Nickname</label>
+          <input id="nickname" placeholder="e.g. Abhi" maxlength="20" />
+        </div>
+      </div>
+
+      <button id="btnJoin" class="primary">Join</button>
+
+      <hr class="sep" />
+
+      <h3>Admin: Create a new league</h3>
+      <div class="grid2">
+        <div>
+          <label>League name</label>
+          <input id="leagueName" placeholder="e.g. Ashes 2026" maxlength="40" />
+        </div>
+        <div>
+          <label>Your nickname (admin)</label>
+          <input id="adminNickname" placeholder="e.g. Abhi" maxlength="20" />
+        </div>
+      </div>
+
+      <button id="btnCreateLeague" class="secondary">Create League</button>
+      <p id="createResult" class="muted"></p>
+    </section>
+
+    <section id="screenLeague" class="hidden">
+      <div class="card">
+        <div class="row">
+          <div>
+            <h2 id="leagueTitle">League</h2>
+            <div class="muted">Invite code: <b id="leagueCode">—</b></div>
+          </div>
+          <div class="row">
+            <button id="tabMatches" class="tab active">Matches</button>
+            <button id="tabLeaderboard" class="tab">Leaderboard</button>
+            <button id="tabAdmin" class="tab hidden">Admin</button>
+          </div>
+        </div>
+      </div>
+
+      <section id="panelMatches" class="card">
+        <h3>Matches</h3>
+        <div id="matchesList" class="list"></div>
+      </section>
+
+      <section id="panelLeaderboard" class="card hidden">
+        <h3>Leaderboard</h3>
+        <button id="btnRefreshLeaderboard" class="soft">Refresh</button>
+        <div id="leaderboardList" class="list"></div>
+      </section>
+
+      <section id="panelAdmin" class="card hidden">
+        <h3>Admin Panel</h3>
+
+        <div class="grid3">
+          <div>
+            <label>Team A</label>
+            <input id="teamA" placeholder="AUS" maxlength="20" />
+          </div>
+          <div>
+            <label>Team B</label>
+            <input id="teamB" placeholder="ENG" maxlength="20" />
+          </div>
+          <div>
+            <label>Start time (local)</label>
+            <input id="startTime" type="datetime-local" />
+          </div>
+        </div>
+
+        <button id="btnAddMatch" class="primary">Add Match</button>
+
+        <hr class="sep" />
+        <h4>Set Winner (per match)</h4>
+        <div id="adminMatchesList" class="list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
